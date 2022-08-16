@@ -5,18 +5,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-- Feature/fix
-- Feature/fix
-- Feature/fix
-- ...
+- feat: expand the complete example
+- feat: Ability to create different organizations and adding different accounts to the different orgs using the module
 
-## [1.0.0] - YYYY-MM-DD
+## [1.0.0] - 2022-08-16
 ### Description
-- Feature/fix
-- Feature/fix
-- Feature/fix
-- ...
+- Initial Commit
+- feat: Added organizations account feature (to create more than 1 use `for_each` of `count`)
+- feat: Added feature to make delegated administrator (commonly known management account)
+- feat: Organizations Unit
 
-[Unreleased]: https://github.com/boldlink/terraform-module-template/compare/2.0.2...HEAD
-
-[1.0.0]: https://github.com/boldlink/terraform-module-template/releases/tag/1.0.0
+[1.0.0]: https://github.com/boldlink/terraform-aws-organizations/actions/releases/tag/1.0.0
