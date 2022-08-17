@@ -1,8 +1,8 @@
-[![Build Status](https://github.com/boldlink/<REPO_NAME>/actions/workflows/pre-commit.yml/badge.svg)](https://github.com/boldlink/<REPO_NAME>/actions)
+[![Build Status](https://github.com/boldlink/terraform-aws-organizations/actions/workflows/pre-commit.yml/badge.svg)](https://github.com/boldlink/terraform-aws-organizations/actions)
 
 [<img src="https://avatars.githubusercontent.com/u/25388280?s=200&v=4" width="96"/>](https://boldlink.io)
 
-# Terraform  module example of complete and most common configuration
+# Terraform module example of the complete and most common configuration
 
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
@@ -11,19 +11,26 @@
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.14.11 |
-| <a name="requirement_github"></a> [github](#requirement\_github) | >= 4.24.1 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.20.0 |
 
 ## Providers
 
-No providers.
+| Name | Version |
+|------|---------|
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.26.0 |
 
 ## Modules
 
-No modules.
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_complete"></a> [complete](#module\_complete) | ../../ | n/a |
+| <a name="module_oganization_unit"></a> [oganization\_unit](#module\_oganization\_unit) | ../../ | n/a |
 
 ## Resources
 
-No resources.
+| Name | Type |
+|------|------|
+| [aws_organizations_organization.org](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/organizations_organization) | data source |
 
 ## Inputs
 
@@ -31,7 +38,9 @@ No inputs.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_organization_unit_id"></a> [organization\_unit\_id](#output\_organization\_unit\_id) | ID of the created OU |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Third party software
