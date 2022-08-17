@@ -24,6 +24,7 @@
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_complete"></a> [complete](#module\_complete) | ../../ | n/a |
+| <a name="module_oganization_unit"></a> [oganization\_unit](#module\_oganization\_unit) | ../../ | n/a |
 
 ## Resources
 
@@ -37,7 +38,9 @@ No inputs.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_organization_unit_id"></a> [organization\_unit\_id](#output\_organization\_unit\_id) | ID of the created OU |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Third party software
