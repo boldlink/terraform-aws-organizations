@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 - feat: expand the complete example
-- feat: Ability to create different organizations and adding different accounts to the different orgs using the module
+- feat: Ability to create different organizations/OUs and adding different accounts to the different orgs/OUs using the module
 
 ## [1.0.0] - 2022-08-16
 ### Description

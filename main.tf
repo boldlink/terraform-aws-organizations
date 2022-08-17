@@ -1,6 +1,5 @@
-### creates member account
 locals {
-  create_account = var.name != null && var.email != null ? tobool(true) : tobool(false)
+  create_account = var.name != null && var.email != null ? true : false
 }
 
 resource "aws_organizations_organization" "main" {
