@@ -1,4 +1,11 @@
-[![Build Status](https://github.com/boldlink/terraform-aws-organizations/actions/workflows/pre-commit.yml/badge.svg)](https://github.com/boldlink/terraform-aws-organizations/actions)
+[![License](https://img.shields.io/badge/License-Apache-blue.svg)](https://github.com/boldlink/terraform-aws-organizations/blob/main/LICENSE)
+[![Latest Release](https://img.shields.io/github/release/boldlink/terraform-aws-organizations.svg)](https://github.com/boldlink/terraform-aws-organizations/releases/latest)
+[![Build Status](https://github.com/boldlink/terraform-aws-organizations/actions/workflows/update.yaml/badge.svg)](https://github.com/boldlink/terraform-aws-organizations/actions)
+[![Build Status](https://github.com/boldlink/terraform-aws-organizations/actions/workflows/release.yaml/badge.svg)](https://github.com/boldlink/terraform-aws-organizations/actions)
+[![Build Status](https://github.com/boldlink/terraform-aws-organizations/actions/workflows/pre-commit.yaml/badge.svg)](https://github.com/boldlink/terraform-aws-organizations/actions)
+[![Build Status](https://github.com/boldlink/terraform-aws-organizations/actions/workflows/pr-labeler.yaml/badge.svg)](https://github.com/boldlink/terraform-aws-organizations/actions)
+[![Build Status](https://github.com/boldlink/terraform-aws-organizations/actions/workflows/checkov.yaml/badge.svg)](https://github.com/boldlink/terraform-aws-organizations/actions)
+[![Build Status](https://github.com/boldlink/terraform-aws-organizations/actions/workflows/auto-badge.yaml/badge.svg)](https://github.com/boldlink/terraform-aws-organizations/actions)
 
 [<img src="https://avatars.githubusercontent.com/u/25388280?s=200&v=4" width="96"/>](https://boldlink.io)
 
