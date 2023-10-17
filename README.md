@@ -17,15 +17,23 @@
 
 This Module creates an organization, member account(s), ability to make the member account a delegated administrator and organizational unit
 
-Examples available [`here`](github.com/boldlink/terraform-aws-organizations/tree/main/examples)
+## Reasons to use this module over standard resources
+- **Streamlined Deployment:** This module simplifies the creation of AWS Organizations, accounts, and Organizational Units through a single, unified deployment.
+
+- **Centralized Management:** Effortlessly manage all your AWS Organization resources from one central location, ensuring consistency and ease of administration.
+
+Examples available [`here`](./examples)
 
 ## Usage
-*NOTE*: These examples use the latest version of this module
+**NOTE**:
+- These examples use the latest version of this module
+- An organization cannot be created if one already exists.
 
-```console
+```hcl
 module "minimum" {
   #OU Only
-  source       = "../../"
+  source       = "boldlink/organizations/aws"
+  version      = "<provide_latest_version_here>"
   ou_name      = local.name
   ou_parent_id = local.parent_id
   tags         = local.tags
@@ -49,7 +57,7 @@ module "minimum" {
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.12.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.21.0 |
 
 ## Modules
 
@@ -69,7 +77,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_administrator_service_principal"></a> [administrator\_service\_principal](#input\_administrator\_service\_principal) | The service principal of the AWS service for which you want to make the member account a delegated administrator. | `string` | `"cloudtrail.amazonaws.com"` | no |
-| <a name="input_aws_service_access_principals"></a> [aws\_service\_access\_principals](#input\_aws\_service\_access\_principals) | List of AWS service principal names for which you want to enable integration with your organization. This is typically in the form of a URL, such as service-abbreviation.amazonaws.com. Organization must have feature\_set set to ALL | `list(string)` | <pre>[<br>  "access-analyzer.amazonaws.com",<br>  "aws-artifact-account-sync.amazonaws.com",<br>  "backup.amazonaws.com",<br>  "cloudtrail.amazonaws.com",<br>  "config.amazonaws.com",<br>  "guardduty.amazonaws.com"<br>]</pre> | no |
+| <a name="input_aws_service_access_principals"></a> [aws\_service\_access\_principals](#input\_aws\_service\_access\_principals) | List of AWS service principal names for which you want to enable integration with your organization. This is typically in the form of a URL, such as service-abbreviation.amazonaws.com. Organization must have feature\_set set to ALL | `list(string)` | <pre>[<br>  "access-analyzer.amazonaws.com",<br>  "aws-artifact-account-sync.amazonaws.com",<br>  "backup.amazonaws.com",<br>  "cloudtrail.amazonaws.com",<br>  "config.amazonaws.com",<br>  "guardduty.amazonaws.com",<br>  "sqs.amazonaws.com"<br>]</pre> | no |
 | <a name="input_close_on_deletion"></a> [close\_on\_deletion](#input\_close\_on\_deletion) | If true, a deletion event will close the account. Otherwise, it will only remove from the organization. This is not supported for GovCloud accounts. | `bool` | `false` | no |
 | <a name="input_create_govcloud"></a> [create\_govcloud](#input\_create\_govcloud) | Whether to also create a GovCloud account. The GovCloud account is tied to the main (commercial) account this resource creates. If true, the GovCloud account ID is available in the govcloud\_id attribute. The only way to manage the GovCloud account with Terraform is to subsequently import the account using this resource. | `bool` | `false` | no |
 | <a name="input_create_organization"></a> [create\_organization](#input\_create\_organization) | Specify whether to create an organization | `bool` | `false` | no |
@@ -145,9 +153,21 @@ This repository uses third party software:
 
 ### Makefile
 The makefile contained in this repo is optimized for linux paths and the main purpose is to execute testing for now.
-* Create all tests:
-`$ make tests`
-* Clean all tests:
-`$ make clean`
+* Create all tests stacks including any supporting resources:
+```console
+make tests
+```
+* Clean all tests *except* existing supporting resources:
+```console
+make clean
+```
+* Clean supporting resources - this is done separately so you can test your module build/modify/destroy independently.
+```console
+make cleansupporting
+```
+* !!!DANGER!!! Clean the state files from examples and test/supportingResources - use with CAUTION!!!
+```console
+make cleanstatefiles
+```
 
-#### BOLDLink-SIG 2022
+#### BOLDLink-SIG 2023

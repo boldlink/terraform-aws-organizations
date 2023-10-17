@@ -29,6 +29,7 @@ resource "aws_organizations_delegated_administrator" "main" {
   count             = var.make_delegated_administrator ? 1 : 0
   account_id        = aws_organizations_account.main[0].id
   service_principal = var.administrator_service_principal
+  depends_on        = [aws_organizations_organization.main]
 }
 
 resource "aws_organizations_organizational_unit" "main" {
