@@ -75,7 +75,8 @@ variable "aws_service_access_principals" {
     "backup.amazonaws.com",
     "cloudtrail.amazonaws.com",
     "config.amazonaws.com",
-    "guardduty.amazonaws.com"
+    "guardduty.amazonaws.com",
+    "sqs.amazonaws.com"
   ]
 }
 
